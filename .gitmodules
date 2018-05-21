@@ -7,3 +7,6 @@
 [submodule "hardware/stepper_controller_5x3"]
 	path = hardware/stepper_controller_5x3
 	url = https://github.com/janelia-kicad/stepper_controller_5x3.git
+[submodule "hardware/modular_device_remote_switch"]
+	path = hardware/modular_device_remote_switch
+	url = https://github.com/janelia-kicad/modular_device_remote_switch.git
