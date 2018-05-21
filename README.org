@@ -1,4 +1,4 @@
-# Created 2018-05-21 Mon 14:32
+# Created 2018-05-21 Mon 15:56
 #+OPTIONS: title:nil author:nil email:nil toc:t |:t ^:nil
 * Repository Information
 
@@ -19,3 +19,10 @@ This...
 [[file:./images/top_right.png]]
 
 * Hardware
+
+** modular_device_base_5x3
+#+INCLUDE: "./README-modular_device_base_5x3.org"
+** modular_device_remote_switch
+#+INCLUDE: "./README-modular_device_remote_switch.org"
+** stepper_controller_5x3
+#+INCLUDE: "./README-stepper_controller_5x3.org"
