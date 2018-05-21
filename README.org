@@ -1,4 +1,4 @@
-# Created 2018-05-21 Mon 15:56
+# Created 2018-05-21 Mon 16:32
 #+OPTIONS: title:nil author:nil email:nil toc:t |:t ^:nil
 * Repository Information
 
@@ -18,11 +18,22 @@ This...
 
 [[file:./images/top_right.png]]
 
+* Firmware
+
+** SpinningPlatformController
+
+#+INCLUDE: "./README-SpinningPlatformController.org"
+
 * Hardware
 
 ** modular_device_base_5x3
+
 #+INCLUDE: "./README-modular_device_base_5x3.org"
+
 ** modular_device_remote_switch
+
 #+INCLUDE: "./README-modular_device_remote_switch.org"
+
 ** stepper_controller_5x3
+
 #+INCLUDE: "./README-stepper_controller_5x3.org"
