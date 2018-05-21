@@ -10,3 +10,6 @@
 [submodule "hardware/modular_device_remote_switch"]
 	path = hardware/modular_device_remote_switch
 	url = https://github.com/janelia-kicad/modular_device_remote_switch.git
+[submodule "generate_modular_device_documentation"]
+	path = generate_modular_device_documentation
+	url = https://github.com/janelia-modular-devices/generate_modular_device_documentation.git
