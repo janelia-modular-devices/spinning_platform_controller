@@ -1,7 +1,21 @@
-#+TITLE: spinning_platform_controller
-#+AUTHOR: Peter Polidoro
-#+EMAIL: peterpolidoro@gmail.com
-
+# Created 2018-05-21 Mon 14:32
+#+OPTIONS: title:nil author:nil email:nil toc:t |:t ^:nil
 * Repository Information
-  - Author :: Peter Polidoro
-  - License :: BSD
+
+- Name :: spinning_platform_controller
+- License :: BSD, Open-Source Hardware
+- URL :: https://github.com/janelia-modular-devices/spinning_platform_controller.git
+- Author :: Peter Polidoro
+- Email :: peterpolidoro@gmail.com
+
+** Description
+
+This...
+
+* Images
+
+[[file:./images/top_left.png]]
+
+[[file:./images/top_right.png]]
+
+* Hardware
