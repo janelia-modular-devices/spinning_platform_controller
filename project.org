@@ -8,8 +8,40 @@
 
 * Description
 
-  This...
+  This device controls the rotations of the spinning platform.
 
-* Assembly Instructions
+* Usage Instructions
 
-  - First...
+  - The switches control the rotations of the spinning platform.
+  - Clicking the switch connected to BTN A of the controller causes the target
+    platform position to increment by one rotation in the positive direction.
+  - Clicking the switch connected to BTN B of the controller causes the target
+    platform position to increment by one rotation in the negative direction.
+  - The platform spins until its position equals the target position and then it
+    stops, waiting indefinitely for more user input.
+  - For example, if the platform is stopped and the user presses the switch
+    connected to BTN A five times and then quickly presses the switch connected
+    to BTN B two times, then the platform will rotate three full revolutions in
+    the positive direction. (target position = 5 - 2 = 3). If the user waits
+    until the platform has rotated three times until it stops and then presses
+    the switch connected to BTN B three times, the platform will rotate three
+    times in the negative direction and end up where it started originally.
+
+* Build Instructions
+
+  - This controller is made from a single 5x3 form factor modular device.
+  - This device consists of two pcbs, the (modular_device_base_5x3) and the
+    (stepper_controller_5x3).
+  - In addition to the two pcbs, there is one acrylic mounting plate
+    (modular_device_enclosure 5x3 enclosure_bottom), and two switches
+    (modular_device_remote_switch).
+  - Send the zip files containing the gerbers for each of the two pcbs to your
+    favorite pcb manufacturer for fabrication.
+  - Using the bill of materials and vendor parts lists order the parts necessary
+    for construction for the two pcbs, the mounting plate, and the two switches.
+  - Assemble each of the pcbs using the assembly instructions provided for each.
+  - Use the dxf file for the enclosure_bottom to cut the mounting plate from the
+    acrylic sheet using a laser cutter or send the dxf to a laser cutting
+    service for fabrication.
+  - Assemble the two remote switches using the assembly instructions, cutting
+    the cables to the length necessary for the specific setup.

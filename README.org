@@ -1,0 +1,549 @@
+# Created 2018-05-22 Tue 16:47
+#+OPTIONS: title:nil author:nil email:nil toc:t |:t ^:nil
+#+OPTIONS: title:nil author:nil email:nil toc:t |:t ^:nil
+#+OPTIONS: title:nil author:nil email:nil toc:t |:t ^:nil
+#+OPTIONS: title:nil author:nil email:nil toc:t |:t ^:nil
+#+EXPORT_FILE_NAME: README
+* Repository Information
+
+- Name :: spinning_platform_controller
+- License :: BSD, Open-Source Hardware
+- URL :: https://github.com/janelia-modular-devices/spinning_platform_controller.git
+- Author :: Peter Polidoro
+- Email :: peterpolidoro@gmail.com
+
+** Description
+
+This device controls the rotations of the spinning platform.
+
+* Images
+
+[[file:./images/mounted.png]]
+
+[[file:./images/top_left.png]]
+
+[[file:./images/top_right.png]]
+
+* Usage Instructions
+
+- The switches control the rotations of the spinning platform.
+- Clicking the switch connected to BTN A of the controller causes the target
+  platform position to increment by one rotation in the positive direction.
+- Clicking the switch connected to BTN B of the controller causes the target
+  platform position to increment by one rotation in the negative direction.
+- The platform spins until its position equals the target position and then it
+  stops, waiting indefinitely for more user input.
+- For example, if the platform is stopped and the user presses the switch
+  connected to BTN A five times and then quickly presses the switch connected
+  to BTN B two times, then the platform will rotate three full revolutions in
+  the positive direction. (target position = 5 - 2 = 3). If the user waits
+  until the platform has rotated three times until it stops and then presses
+  the switch connected to BTN B three times, the platform will rotate three
+  times in the negative direction and end up where it started originally.
+
+* Build Instructions
+
+- This controller is made from a single 5x3 form factor modular device.
+- This device consists of two pcbs, the (modular_device_base_5x3) and the
+  (stepper_controller_5x3).
+- In addition to the two pcbs, there is one acrylic mounting plate
+  (modular_device_enclosure 5x3 enclosure_bottom), and two switches
+  (modular_device_remote_switch).
+- Send the zip files containing the gerbers for each of the two pcbs to your
+  favorite pcb manufacturer for fabrication.
+- Using the bill of materials and vendor parts lists order the parts necessary
+  for construction for the two pcbs, the mounting plate, and the two switches.
+- Assemble each of the pcbs using the assembly instructions provided for each.
+- Use the dxf file for the enclosure_bottom to cut the mounting plate from the
+  acrylic sheet using a laser cutter or send the dxf to a laser cutting
+  service for fabrication.
+- Assemble the two remote switches using the assembly instructions, cutting
+  the cables to the length necessary for the specific setup.
+
+* Hardware
+
+** modular_device_base_5x3
+
+*** Repository Information
+
+- Name :: modular_device_base_5x3
+- Version :: 1.2
+- License :: Open-Source Hardware
+- URL :: https://github.com/janelia-kicad/modular_device_base_5x3
+- Author :: Peter Polidoro
+- Email :: peterpolidoro@gmail.com
+
+**** Description
+
+This board is the base of 5x3 format modular devices. It is a breakout board
+for the microprocessor, with connections for power, communication, and top
+boards.
+
+*** Images
+
+[[file:./images/modular_device_base_5x3/images/top.png]]
+
+[[file:./images/modular_device_base_5x3/images/bottom.png]]
+
+*** Schematic
+
+[[file:./hardware/modular_device_base_5x3/schematic/modular_device_base_5x3.pdf][./hardware/modular_device_base_5x3/schematic/modular_device_base_5x3.pdf]]
+
+[[file:./images/modular_device_base_5x3/schematic/images/schematic00.png]]
+
+*** Gerbers
+
+Send gerbers zip file to your favorite PCB manufacturer for fabrication.
+
+[[file:./hardware/modular_device_base_5x3/gerbers/modular_device_base_5x3_v1.2.zip][./hardware/modular_device_base_5x3/gerbers/modular_device_base_5x3_v1.2.zip]]
+
+[[file:./images/modular_device_base_5x3/gerbers/images/gerbers00.png]]
+
+[[file:./images/modular_device_base_5x3/gerbers/images/gerbers01.png]]
+
+*** Bill of Materials
+
+**** PCB Parts
+
+| Item | Reference(s)                         | Quantity | PartNumber          | Vendor  | Description                                           |
+|------+--------------------------------------+----------+---------------------+---------+-------------------------------------------------------|
+|    1 | C1 C2 C3 C4 C5                       |        5 | 445-4536-1-ND       | digikey | CAP CER 10UF 50V 10% X7S 1210                         |
+|    2 | C6                                   |        1 | 399-13229-1-ND      | digikey | CAP CER 0.1UF 100V X7R 1210                           |
+|    3 | D1 D2                                |        2 | LSM115JE3/TR13CT-ND | digikey | DIODE SCHOTTKY 15V 1A DO214BA                         |
+|    4 | D10 D11 D12 D13 D3 D4 D5 D6 D7 D8 D9 |       11 | 568-11697-1-ND      | digikey | DIODE SCHOTTKY 45V 10A CFP15                          |
+|    5 | L1                                   |        1 | 350-1712-ND         | digikey | LED 2MM 5V RT ANGLE RED PCMNT                         |
+|    6 | L2                                   |        1 | 350-1717-ND         | digikey | LED 2MM 5V RT ANGLE GREEN PCMNT                       |
+|    7 | L3                                   |        1 | 350-1719-ND         | digikey | LED 2MM 5V RT ANGLE YELLOW PCMNT                      |
+|    8 | MDB1                                 |        2 | S7058-ND            | digikey | 25 Position Header Through Hole Female Socket         |
+|    9 | MH1 MH2 MH3 MH4 MH5 MH6 MH7 MH8      |        8 | 36-2027-ND          | digikey | Round Standoff Threaded 4-40 Aluminum 0.500in 0.187in |
+|   10 | P1                                   |        1 | CP-063BH-ND         | digikey | CONN PWR JACK DC 2.5X5.5 8A T/H                       |
+|   11 | P10 P4 P6 P8                         |        4 | A100903CT-ND        | digikey | CONN HEADER 2POS R/A SMD GOLD                         |
+|   12 | P11                                  |        1 | 732-5336-ND         | digikey | CONN HEADER 3 POS RA 2.54                             |
+|   13 | P12 P13                              |        2 | SAM10781-ND         | digikey | CONN HEADER 2POS .100in SNGL SMD                      |
+|   14 | P2                                   |        1 | ACX1655-ND          | digikey | CONN BNC JACK R/A 75 OHM PCB                          |
+|   15 | P3 P5 P7 P9                          |        4 | A100890CT-ND        | digikey | CONN HEADER 3POS R/A SMD GOLD                         |
+|   16 | R1                                   |        1 | P6.19KAACT-ND       | digikey | RES SMD 6.19K OHM 1% 1/2W 1210                        |
+|   17 | REG1                                 |        1 | 945-1395-5-ND       | digikey | CONV DC/DC 1A 5V OUT SIP VERT                         |
+|   18 | SW1 SW2                              |        2 | CKN1860CT-ND        | digikey | SWITCH TACTILE SPST-NO 1VA 32V                        |
+|   19 | TEENSY1                              |        1 | 1568-1443-ND        | digikey | TEENSY 3.5                                            |
+|   20 | U1                                   |        1 | MAX6817EUT+TCT-ND   | digikey | IC DEBOUNCER SWITCH DUAL SOT23-6                      |
+
+**** Supplemental Parts
+
+| Item | Quantity | PartNumber    | Vendor  | Description                                                              |
+|------+----------+---------------+---------+--------------------------------------------------------------------------|
+|    1 |        1 | 62-1187-ND    | digikey | AC/DC DESKTOP ADAPTER 24V 90W                                            |
+|    2 |        1 | 993-1037-ND   | digikey | CORD 3COND NEMA PLUG 320-C5                                              |
+|    3 |        2 | A106625CT-ND  | digikey | 14 Positions Header Unshrouded Breakaway Connector 0.100in 2 row SMD     |
+|    4 |        3 | S1011EC-24-ND | digikey | 14 Positions Header Unshrouded Breakaway Connector 0.100in 1 row Through |
+|    5 |        1 | S9001-ND      | digikey | CONN JUMPER SHORTING GOLD FLASH                                          |
+|    6 |        1 | AE10342-ND    | digikey | CABLE USB-A TO MICRO USB-B 2M                                            |
+|    7 |        2 | 492-1077-ND   | digikey | ROUND SPACER 4 NYLON 7/16in                                              |
+
+**** Vendor Parts Lists
+
+[[file:./hardware/modular_device_base_5x3/bom/digikey_parts.csv][./hardware/modular_device_base_5x3/bom/digikey_parts.csv]]
+
+[[file:./hardware/modular_device_base_5x3/bom/supplemental_digikey_parts.csv][./hardware/modular_device_base_5x3/bom/supplemental_digikey_parts.csv]]
+
+*** Supplemental Documentation
+
+**** Assembly Instructions
+
+- Cut the bottom trace on the Teensy board that connects the 5V pads according
+  to these instructions [[https://www.pjrc.com/teensy/external_power.html]].
+- Solder through hole header pins into every Teensy 0.1 inch header hole.
+- Solder surface mount header pins onto the bottom of the Teensy making sure
+  they are properly aligned.
+- Solder surface mount and through hole components onto the pcb.
+- Solder the Teensy into the pcb making sure it is properly aligned.
+- Connect header jumper to RED LED enable pins.
+
+** modular_device_enclosure
+
+
+*** Repository Information
+
+- Name :: modular_device_enclosure
+- License :: Open-Source Hardware
+- URL :: https://github.com/janelia-modular-devices/modular_device_enclosure
+- Author :: Peter Polidoro
+- Email :: peterpolidoro@gmail.com
+
+**** Description
+
+This repository contains the files for constructing enclosures for modular
+devices.
+
+*** Assembly Instructions
+
+- Count modular devices of each form factor for a particular setup and choose
+  the appropriate dxf file.
+- Choose appropriate size of 0.125 inch thick acrylic sheet and cut out dxf
+  file using a laser cutter.
+- Press captive nuts into each of the small mounting holes.
+- Insert one 0.375 inch cap screw into each hole on the modular device base
+  pcb marked with a white circle and screw a round threaded standoff onto the
+  other side.
+- Align header pins of the top pcb with the sockets of the modular device base
+  and press the top pcb onto the base until it is firmly seated.
+- On the 5x3 form factor modular devices, place one of the round unthreaded
+  spacers between the top pcb and the base pcb at the two mounting holes
+  furthest from the header pins.
+- Place one nylon washer onto each of the 1.25 inch cap screws and insert one
+  of the screws with a washer into each of the mounting holes on the top pcb
+  marked with a white circle.
+- Align the 1.25 inch cap screws with the captive nuts pressed into the
+  acrylic and screw each one in firmly, but not so tightly as to bend the
+  acrylic.
+
+*** Bill of Materials
+
+**** Enclosure Parts
+
+[[file:./hardware/modular_device_enclosure/bom/bom.org]]
+
+**** Supplemental Parts
+
+[[file:./hardware/modular_device_enclosure/bom/supplemental_bom.org]]
+
+**** Vendor Parts Lists
+
+[[file:./hardware/modular_device_enclosure/bom/digikey_parts.org]]
+
+[[file:./hardware/modular_device_enclosure/bom/mcmaster_parts.org]]
+
+*** DXF Files
+
+**** Single Modular Device
+
+***** 3x2 Form Factor
+
+[[file:./hardware/modular_device_enclosure/3x2/dxf/enclosure_bottom.dxf]]
+
+***** 5x3 Form Factor
+
+[[file:./hardware/modular_device_enclosure/5x3/dxf/enclosure_bottom.dxf]]
+
+**** Multiple Modular Devices
+
+***** 3x2 Form Factor
+
+[[file:./hardware/modular_device_enclosure/multiple/3x2x2.dxf]]
+
+[[file:./hardware/modular_device_enclosure/multiple/3x2x3.dxf]]
+
+[[file:./hardware/modular_device_enclosure/multiple/3x2x4.dxf]]
+
+***** 5x3 Form Factor
+
+[[file:./hardware/modular_device_enclosure/multiple/5x3x2.dxf]]
+
+[[file:./hardware/modular_device_enclosure/multiple/5x3x3.dxf]]
+
+[[file:./hardware/modular_device_enclosure/multiple/5x3x4.dxf]]
+
+***** Both 3x2 and 5x3 Form Factors
+
+[[file:./hardware/modular_device_enclosure/multiple/5x3x1_3x2x1.dxf]]
+
+[[file:./hardware/modular_device_enclosure/multiple/5x3x1_3x2x2.dxf]]
+
+[[file:./hardware/modular_device_enclosure/multiple/5x3x1_3x2x3.dxf]]
+
+[[file:./hardware/modular_device_enclosure/multiple/5x3x1_3x2x4.dxf]]
+
+[[file:./hardware/modular_device_enclosure/multiple/5x3x2_3x2x1.dxf]]
+
+[[file:./hardware/modular_device_enclosure/multiple/5x3x2_3x2x2.dxf]]
+
+[[file:./hardware/modular_device_enclosure/multiple/5x3x2_3x2x3.dxf]]
+
+** modular_device_remote_switch
+
+*** Repository Information
+
+- Name :: modular_device_remote_switch
+- Version :: 1.0
+- License :: Open-Source Hardware
+- URL :: https://github.com/janelia-kicad/modular_device_remote_switch
+- Author :: Peter Polidoro
+- Email :: peterpolidoro@gmail.com
+
+**** Description
+
+This switch connects to modular devices to allow remote button presses.
+
+*** Images
+
+[[file:./images/modular_device_remote_switch/images/black.png]]
+
+[[file:./images/modular_device_remote_switch/images/switch.png]]
+
+[[file:./images/modular_device_remote_switch/images/white.png]]
+
+*** Schematic
+
+[[file:./hardware/modular_device_remote_switch/schematic/modular_device_remote_switch.pdf][./hardware/modular_device_remote_switch/schematic/modular_device_remote_switch.pdf]]
+
+[[file:./images/modular_device_remote_switch/schematic/images/schematic00.png]]
+
+*** Bill of Materials
+
+**** PCB Parts
+
+| Item | Reference(s)                    | Quantity | PartNumber  | Vendor   | Description                         |
+|------+---------------------------------+----------+-------------+----------+-------------------------------------|
+|    1 | CABLE1                          |        1 | A120-100-ND | digikey  | MULTI-PAIR 2COND 22AWG 100FT        |
+|    2 | PIN1 PIN2                       |        2 | WM2515-ND   | digikey  | CONN TERM MALE 22-24AWG GOLD        |
+|    3 | PLUG1                           |        1 | WM2533-ND   | digikey  | CONN HOUSING MALE 2POS .100         |
+|    4 | RECPT1 RECPT2                   |        2 | WM2800-ND   | digikey  | CONN HOUSING 2POS .100 SINGLE       |
+|    5 | SOCKET1 SOCKET2 SOCKET3 SOCKET4 |        4 | WM2512-ND   | digikey  | CONN TERM FEMALE 22-24AWG GOLD      |
+|    6 | SW1                             |        1 | 6944K11     | mcmaster | Pendant Switch Washdown Push Button |
+
+**** Supplemental Parts
+
+| Item | Quantity | PartNumber    | Vendor  | Description                              |
+|------+----------+---------------+---------+------------------------------------------|
+|    1 |        1 | VFP014-1R0-ND | digikey | HEATSHRK VFP876 0.25 inch X 1 inch 50PCS |
+|    2 |        1 | 1030-1001-ND  | digikey | SLEEVING 0.125 inch X 225 feet BLACK     |
+|    3 |        1 | 1030-1333-ND  | digikey | SLEEVING 0.125 inch X 225 feet RED       |
+|    4 |        1 | 1030-1332-ND  | digikey | SLEEVING 0.125 inch X 225 feet PURPLE    |
+|    5 |        1 | 1030-1331-ND  | digikey | SLEEVING 0.125 inch X 225 feet GREEN     |
+|    6 |        1 | 1030-1334-ND  | digikey | SLEEVING 0.125 inch X 225 feet YELLOW    |
+
+**** Vendor Parts Lists
+
+[[file:./hardware/modular_device_remote_switch/bom/digikey_parts.csv][./hardware/modular_device_remote_switch/bom/digikey_parts.csv]]
+
+[[file:./hardware/modular_device_remote_switch/bom/mcmaster_parts.csv][./hardware/modular_device_remote_switch/bom/mcmaster_parts.csv]]
+
+[[file:./hardware/modular_device_remote_switch/bom/supplemental_digikey_parts.csv][./hardware/modular_device_remote_switch/bom/supplemental_digikey_parts.csv]]
+
+*** Supplemental Documentation
+
+**** Assembly Instructions
+
+- Choose 0.125 inch expandable sleeving color and cut to 18 inches.
+- Expand sleeving and slip over the two pendant switch wires, pushing it over
+  the wires until the sleeve is within 0.5 inches from the switch.
+- Slip one 0.25 inch x 1 inch heat shrink tube over the wires and expanded
+  sleeveing and push it as close to the switch as possible so it is covering
+  one fraying end of the sleeving.
+- Slip another 0.25 inch x 1 inch heat shrink tube over the wires and expanded
+  sleeving and push it until the center of the heat shrink tube is about 1.5
+  inches from the ends of the switch wires so it is covering the second
+  fraying end of the sleeving.
+- Use a heat gun to shrink both heat shrink tubes on the sleeving and switch
+  wires.
+- Use wire cutter to trim the two switch wires to the same length.
+- Use wire stripper to remove 0.1 inches of insulation from each of the two
+  switch wires.
+- Use crimp tool to crimp one socket onto the end of each switch wire, using a
+  total of two sockets.
+- Insert each of the two sockets into one receptacle connector, either wire
+  can be placed into the pin 1 position, the placement position is not
+  imporant.
+- Cut the 2-conductor cable to the desired length and remove 2 inches of the
+  cable jacket from each of the two ends of the cable.
+- Slip a 0.25 inch x 1 inch heat shrink tube over each end of the cable jacket
+  and use a heat gun to shrink it into place.
+- Use wire cutter to trim the two cable wires to the same length on each side
+  of the cable.
+- Use wire stripper to remove 0.1 inches of insulation from each end of the
+  two wires in the cable.
+- One one end of the cable, use crimp tool to crimp one socket onto the end of
+  each the two cable wires, using a total of two sockets.
+- Insert each of the two sockets into one receptacle connector, either wire
+  can be placed into the pin 1 position, the placement position is not
+  imporant.
+- One the other end of the cable, use crimp tool to crimp one pin onto the end
+  of each the two cable wires, using a total of two pins.
+- Insert each of the two pins into one plug connector, either wire
+  can be placed into the pin 1 position, the placement position is not
+  imporant.
+- Insert the receptacle connector attached to the switch into the plug
+  connector on the cable.
+- Insert the receptacle connector attached to the cable into a two-pin BTN
+  connector on the modular device.
+
+** stepper_controller_5x3
+
+*** Repository Information
+
+- Name :: stepper_controller_5x3
+- Version :: 1.1
+- License :: Open-Source Hardware
+- URL :: https://github.com/janelia-kicad/stepper_controller_5x3
+- Author :: Peter Polidoro
+- Email :: peterpolidoro@gmail.com
+
+**** Description
+
+This board controls up to 3 stepper motors with optional forward and reverse
+limit switches for each motor.
+
+*** Images
+
+[[file:./images/stepper_controller_5x3/images/top.png]]
+
+[[file:./images/stepper_controller_5x3/images/bottom.png]]
+
+*** Schematic
+
+[[file:./hardware/stepper_controller_5x3/schematic/stepper_controller_5x3.pdf][./hardware/stepper_controller_5x3/schematic/stepper_controller_5x3.pdf]]
+
+[[file:./images/stepper_controller_5x3/schematic/images/schematic00.png]]
+
+[[file:./images/stepper_controller_5x3/schematic/images/schematic01.png]]
+
+[[file:./images/stepper_controller_5x3/schematic/images/schematic02.png]]
+
+[[file:./images/stepper_controller_5x3/schematic/images/schematic03.png]]
+
+[[file:./images/stepper_controller_5x3/schematic/images/schematic04.png]]
+
+*** Gerbers
+
+Send gerbers zip file to your favorite PCB manufacturer for fabrication.
+
+[[file:./hardware/stepper_controller_5x3/gerbers/stepper_controller_5x3_v1.1.zip][./hardware/stepper_controller_5x3/gerbers/stepper_controller_5x3_v1.1.zip]]
+
+[[file:./images/stepper_controller_5x3/gerbers/images/gerbers00.png]]
+
+[[file:./images/stepper_controller_5x3/gerbers/images/gerbers01.png]]
+
+*** Bill of Materials
+
+**** PCB Parts
+
+| Item | Reference(s)                                                                     | Quantity | PartNumber        | Vendor  | Description                                                               |
+|------+----------------------------------------------------------------------------------+----------+-------------------+---------+---------------------------------------------------------------------------|
+|    1 | C1 C12 C19 C26 C4 C5                                                             |        6 | 399-13229-1-ND    | digikey | CAP CER 0.1UF 100V X7R 1210                                               |
+|    2 | C10 C11 C15 C16 C17 C18 C22 C23 C24 C25 C8 C9                                    |       12 | 478-1350-1-ND     | digikey | CAP CER 470PF 100V X7R 0805                                               |
+|    3 | C13 C20 C6                                                                       |        3 | PCE3812CT-ND      | digikey | CAP ALUM 220UF 20% 50V SMD                                                |
+|    4 | C14 C2 C21 C3 C7                                                                 |        5 | 445-4536-1-ND     | digikey | CAP CER 10UF 50V 10% X7S 1210                                             |
+|    5 | CLK1                                                                             |        1 | CTX277LVCT-ND     | digikey | OSC XO 32.000MHZ HCMOS TTL SMD                                            |
+|    6 | D1                                                                               |        1 | 568-11697-1-ND    | digikey | DIODE SCHOTTKY 45V 10A CFP15                                              |
+|    7 | L1 L10 L11 L12 L2 L3 L4 L5 L6 L7 L8 L9                                           |       12 | XC2328CT-ND       | digikey | FIXED IND 90NH 8A 8.5 MOHM SMD                                            |
+|    8 | MDB1                                                                             |        2 | S1011E-25-ND      | digikey | 25 Positions Header Breakaway Connector 0.1in                             |
+|    9 | P1                                                                               |        1 | CP-063BH-ND       | digikey | CONN PWR JACK DC 2.5X5.5 8A T/H                                           |
+|   10 | R1                                                                               |        1 | P1.00KAACT-ND     | digikey | RES SMD 1K OHM 1% 1/2W 1210                                               |
+|   11 | REG1                                                                             |        1 | 945-1395-5-ND     | digikey | CONV DC/DC 1A 5V OUT SIP VERT                                             |
+|   12 | RV1 RV10 RV11 RV12 RV13 RV14 RV15 RV16 RV17 RV18 RV2 RV3 RV4 RV5 RV6 RV7 RV8 RV9 |       18 | 495-7454-1-ND     | digikey | VARISTOR 47V 80A 0805                                                     |
+|   13 | SS1 SS2 SS3                                                                      |       48 | ED90331-ND        | digikey | CONN PIN RCPT .025-.037 SOLDER                                            |
+|   14 | T1 T3 T5                                                                         |        3 | 277-1152-ND       | digikey | TERM BLOCK HDR 4POS VERT 5.08MM                                           |
+|   15 | T2 T4 T6                                                                         |        3 | 277-1223-ND       | digikey | TERM BLOCK HDR 4POS VERT 3.81MM                                           |
+|   16 | U1                                                                               |        1 | 1460-1071-1-ND    | digikey | IC MOTOR CONTROLLER SPI 32QFN                                             |
+|   17 | U2                                                                               |        1 | 296-14668-1-ND    | digikey | Buffer Non-Inverting 1 Element 8 Bit per Element Push-Pull Output 20-SOIC |
+|   18 | U3 U4 U5                                                                         |        3 | MAX6817EUT+TCT-ND | digikey | IC DEBOUNCER SWITCH DUAL SOT23-6                                          |
+
+**** Supplemental Parts
+
+| Item | Quantity | PartNumber       | Vendor  | Description                       |
+|------+----------+------------------+---------+-----------------------------------|
+|    1 |        3 | 277-1013-ND      | digikey | TERM BLOCK PLUG 4POS STR 5.08MM   |
+|    2 |        3 | 277-1042-ND      | digikey | TERM BLOCK PLUG 4POS 5.08MM       |
+|    3 |        3 | 277-1163-ND      | digikey | TERM BLOCK PLUG 4POS STR 3.81MM   |
+|    4 |        3 | 277-1193-ND      | digikey | TERM BLOCK PLUG 4POS 90DEG 3.81MM |
+|    5 |        3 | 1460-1187-ND     | digikey | TMC2130 STEPPER DRIVER BOARD      |
+|    6 |        3 | 501100B00000G-ND | digikey | HEATSINK 14-DIP/16-DIP            |
+|    7 |        1 | 3M10315-ND       | digikey | TAPE ADHESIVE TRANSFER 1/2in X5YD |
+
+**** Vendor Parts Lists
+
+[[file:./hardware/stepper_controller_5x3/bom/digikey_parts.csv][./hardware/stepper_controller_5x3/bom/digikey_parts.csv]]
+
+[[file:./hardware/stepper_controller_5x3/bom/supplemental_digikey_parts.csv][./hardware/stepper_controller_5x3/bom/supplemental_digikey_parts.csv]]
+
+*** Supplemental Documentation
+
+**** Assembly Instructions
+
+- Solder header pins into the stepper driver board(s), making note of TOP label.
+  Insert header pins on bottom of board so that the long unsoldered header
+  pins point down when the TOP label faces up.
+- Expose one side of the thermal adhesive tape and attach to the bottom of the
+  heatsink. Trim tape so it does not extend beyond heatsink edges.
+- Expose the other side of the thermal adhesive tape and attach the heatsink
+  to the stepper driver board on the side with the TOP label.
+- Solder surface mount and through hole components onto the pcb.
+- Insert stepper driver board(s) into pin receptacles.
+
+* Firmware
+
+** SpinningPlatformController
+
+
+*** Library Information
+- Name :: SpinningPlatformController
+- Version :: 2.0.0
+- License :: BSD
+- URL :: https://github.com/janelia-arduino/SpinningPlatformController
+- Author :: Peter Polidoro
+- Email :: peterpolidoro@gmail.com
+
+**** Description
+
+Modular device spinning platform controller library.
+
+*** API NAMES
+
+#+BEGIN_SRC js
+  {
+    "id": "getApi",
+    "result": {
+      "firmware": [
+        "SpinningPlatformController"
+      ],
+      "verbosity": "NAMES",
+      "functions": [
+        "movePlatformSoftlyTo",
+        "getPlatformPosition",
+        "getPlatformTargetPosition",
+        "platformAtTargetPosition"
+      ],
+      "parameters": [
+        "platform_position"
+      ],
+      "properties": [
+        "platformPositionMin",
+        "platformPositionMax"
+      ],
+      "callbacks": [
+        "incrementPlatformTargetPosition",
+        "decrementPlatformTargetPosition"
+      ]
+    }
+  }
+#+END_SRC
+
+*** API GENERAL
+
+[[file:./firmware/SpinningPlatformController/api/]]
+
+*** Ancestors
+
+[[https://github.com/janelia-arduino/ModularServer]]
+
+[[https://github.com/janelia-arduino/ModularDeviceBase]]
+
+[[https://github.com/janelia-arduino/StepDirController]]
+
+[[https://github.com/janelia-arduino/StepperController]]
+
+*** Clients
+
+*** Devices
+
+[[https://github.com/janelia-modular-devices/modular_device_base.git]]
+
+[[https://github.com/janelia-modular-devices/stepper_controller.git]]
+
+*** More Detailed Modular Device Information
+
+[[https://github.com/janelia-modular-devices/modular-devices]]
+
+*** Installation Instructions
+
+[[https://github.com/janelia-arduino/arduino-libraries]]
