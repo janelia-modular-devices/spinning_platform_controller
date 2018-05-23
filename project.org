@@ -1,6 +1,7 @@
 * Header                                                           :noexport:
 
   #+MACRO: name spinning_platform_controller
+  #+MACRO: version 1.0
   #+MACRO: license BSD, Open-Source Hardware
   #+MACRO: url https://github.com/janelia-modular-devices/spinning_platform_controller.git
   #+AUTHOR: Peter Polidoro
@@ -45,3 +46,13 @@
     service for fabrication.
   - Assemble the two remote switches using the assembly instructions, cutting
     the cables to the length necessary for the specific setup.
+  - Connect the four stepper motor wires to a 4 position 0.2 inch terminal block
+    plug connector according to the following table. Then connect that plug into
+    T1 (motor 0) on the stepper controller pcb.
+
+  | Stepper Motor | Stepper Controller | Terminal Block Plug Connector |
+  |---------------+--------------------+-------------------------------|
+  | BLACK         | MOTOR 0 A+         |                             4 |
+  | GREEN         | MOTOR 0 A-         |                             3 |
+  | RED           | MOTOR 0 B+         |                             2 |
+  | BLUE          | MOTOR 0 B-         |                             1 |

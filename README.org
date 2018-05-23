@@ -1,4 +1,4 @@
-# Created 2018-05-22 Tue 16:47
+# Created 2018-05-23 Wed 09:50
 #+OPTIONS: title:nil author:nil email:nil toc:t |:t ^:nil
 #+OPTIONS: title:nil author:nil email:nil toc:t |:t ^:nil
 #+OPTIONS: title:nil author:nil email:nil toc:t |:t ^:nil
@@ -7,6 +7,7 @@
 * Repository Information
 
 - Name :: spinning_platform_controller
+- Version :: 1.0
 - License :: BSD, Open-Source Hardware
 - URL :: https://github.com/janelia-modular-devices/spinning_platform_controller.git
 - Author :: Peter Polidoro
@@ -59,6 +60,16 @@ This device controls the rotations of the spinning platform.
   service for fabrication.
 - Assemble the two remote switches using the assembly instructions, cutting
   the cables to the length necessary for the specific setup.
+- Connect the four stepper motor wires to a 4 position 0.2 inch terminal block
+  plug connector according to the following table. Then connect that plug into
+  T1 (motor 0) on the stepper controller pcb.
+
+| Stepper Motor | Stepper Controller | Terminal Block Plug Connector |
+|---------------+--------------------+-------------------------------|
+| BLACK         | MOTOR 0 A+         |                             4 |
+| GREEN         | MOTOR 0 A-         |                             3 |
+| RED           | MOTOR 0 B+         |                             2 |
+| BLUE          | MOTOR 0 B-         |                             1 |
 
 * Hardware
 
