@@ -3,7 +3,7 @@
   #+MACRO: name spinning_platform_controller
   #+MACRO: version 1.0
   #+MACRO: license BSD, Open-Source Hardware
-  #+MACRO: url https://github.com/janelia-modular-devices/spinning_platform_controller.git
+  #+MACRO: url https://github.com/janelia-modular-devices/spinning_platform_controller
   #+AUTHOR: Peter Polidoro
   #+EMAIL: peterpolidoro@gmail.com
 
