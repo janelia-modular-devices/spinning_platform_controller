@@ -11,7 +11,7 @@
 - License :: BSD, Open-Source Hardware
 - URL :: https://github.com/janelia-modular-devices/spinning_platform_controller.git
 - Author :: Peter Polidoro
-- Email :: peterpolidoro@gmail.com
+- Email :: peter@polidoro.io
 
 ** Description
 
@@ -82,7 +82,7 @@ This device controls the rotations of the spinning platform.
 - License :: Open-Source Hardware
 - URL :: https://github.com/janelia-kicad/modular_device_base_5x3
 - Author :: Peter Polidoro
-- Email :: peterpolidoro@gmail.com
+- Email :: peter@polidoro.io
 
 **** Description
 
@@ -179,7 +179,7 @@ Send gerbers zip file to your favorite PCB manufacturer for fabrication.
 - License :: Open-Source Hardware
 - URL :: https://github.com/janelia-modular-devices/modular_device_enclosure
 - Author :: Peter Polidoro
-- Email :: peterpolidoro@gmail.com
+- Email :: peter@polidoro.io
 
 **** Description
 
@@ -279,7 +279,7 @@ devices.
 - License :: Open-Source Hardware
 - URL :: https://github.com/janelia-kicad/modular_device_remote_switch
 - Author :: Peter Polidoro
-- Email :: peterpolidoro@gmail.com
+- Email :: peter@polidoro.io
 
 **** Description
 
@@ -387,7 +387,7 @@ This switch connects to modular devices to allow remote button presses.
 - License :: Open-Source Hardware
 - URL :: https://github.com/janelia-kicad/stepper_controller_5x3
 - Author :: Peter Polidoro
-- Email :: peterpolidoro@gmail.com
+- Email :: peter@polidoro.io
 
 **** Description
 
@@ -492,7 +492,7 @@ Send gerbers zip file to your favorite PCB manufacturer for fabrication.
 - License :: BSD
 - URL :: https://github.com/janelia-arduino/SpinningPlatformController
 - Author :: Peter Polidoro
-- Email :: peterpolidoro@gmail.com
+- Email :: peter@polidoro.io
 
 **** Description
 
